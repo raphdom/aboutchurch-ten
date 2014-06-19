@@ -13,8 +13,9 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
 	
 	<context:annotation-config />
 	
-	<context:component-scan base-package="net.aboutchurch.pvn.controller" />
+	<mvc:annotation-driven /> 
 	
-	<mvc:resources mapping="/**" location="/" />
+	<context:component-scan base-package="net.aboutchurch.pvn" />
 	
+
 </beans>

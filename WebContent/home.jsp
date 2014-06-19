@@ -60,7 +60,7 @@
 				</div>
 			</div>
 			<div id="pvn-main-content-articles">
-				<jsp:include page="fragments/articles.jsp" />
+				<%-- <jsp:include page="fragments/articles.jsp" /> --%>
 			</div>
 		</div>
 
