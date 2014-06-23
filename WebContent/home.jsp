@@ -29,7 +29,7 @@
 	<body>
 		<jsp:include page="fragments/header.jsp" />
 		
-		<%-- <jsp:include page="fragments/banners.jsp" /> --%>
+		<jsp:include page="fragments/banners.jsp" />
 		
 		
 		<div id="pvn-content-banner">
@@ -54,13 +54,13 @@
 		</div>
 		<div id="pvn-main-content">
 			<div id="pvn-main-content-left">
-				<%-- <jsp:include page="fragments/albunsHome.jsp" /> --%>
+				<jsp:include page="fragments/albunsHome.jsp" />
 				<div id="pvn-main-content-agenda">
-					<%-- <jsp:include page="fragments/agenda.jsp" /> --%>
+					<jsp:include page="fragments/agenda.jsp" />
 				</div>
 			</div>
 			<div id="pvn-main-content-articles">
-				<%-- <jsp:include page="fragments/articles.jsp" /> --%>
+				<jsp:include page="fragments/articles.jsp" />
 			</div>
 		</div>
 

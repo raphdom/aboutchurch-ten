@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="/WEB-INF/lib/mentawai-all-2.5.3.jar" prefix="mtw" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<jsp:include page="fragments/head.jsp" />
@@ -19,13 +18,13 @@
 		<jsp:include page="fragments/header.jsp" />
 		<jsp:include page="fragments/path.jsp" />
 		<div id="pvn-article">
-			<mtw:if test="category.file" value="null" negate="true">
-				<div class="image"><img src="ImageViewer.jr?id=<mtw:out value='category.file.id'/>&width=250&height=250&exactlySize=false&dataType=3"  alt=""></div>
-			</mtw:if>
-			<div class="titulo"><mtw:out value="category.name"/></div>
-			<div class="cont_artigo"><mtw:out value="category.description"/></div>
+			<c:if test="${not empty category.thumbId}">
+				<div class="image"><img src="getThumb.action?id=<c:out value='${category.thumbId}'/>&width=250&height=250&exactlySize=false&dataType=3"  alt=""></div>
+			</c:if>
+			<div class="titulo"><c:out value="${category.text}"/></div>
+			<div class="cont_artigo"><c:out value="${category.description}"/></div>
 			<div id="pvn-main-content-agenda-horizontal">
-				<jsp:include page="fragments/agendaHorizontal.jsp" />
+				<%-- <jsp:include page="fragments/agendaHorizontal.jsp" /> --%>
 			</div>
 			<div id="pvn-main-content-articles-category">
 				<jsp:include page="fragments/articles.jsp" />
