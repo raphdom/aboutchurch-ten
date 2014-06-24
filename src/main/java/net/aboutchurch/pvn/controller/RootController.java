@@ -1,9 +1,5 @@
 package net.aboutchurch.pvn.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +17,8 @@ import com.jrdevel.aboutus.core.site.banner.BannerService;
  *
  */
 @Controller
-public class HomePageController {
-	
+@RequestMapping("/")
+public class RootController {
 	
 	@Autowired
 	private ArticleService articleService;
@@ -36,11 +32,10 @@ public class HomePageController {
 	@Autowired
 	private EventService eventService;
 	
-	
-	@RequestMapping(value="/home.action", method = RequestMethod.GET)
-	public ModelAndView home(HttpServletRequest _request, HttpServletResponse _response, HttpSession session) throws Exception {
+	@RequestMapping(method=RequestMethod.GET)
+	public ModelAndView index(){
 		
-		ModelAndView model = new ModelAndView("home");
+		ModelAndView model = new ModelAndView("index");
 		
 		//Banners
 		ResultObject resultBanners = bannerService.listHomePage();
@@ -61,5 +56,5 @@ public class HomePageController {
 		return model;
 		
 	}
-	
+
 }

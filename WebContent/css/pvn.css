@@ -610,7 +610,6 @@ list-style: none;
 	border: 1px solid #ccc;
 	background-color: white;
 	padding: 9px;
-	margin: 7px;
 	display: block;
 	float: left;
 	margin-bottom: 2px;
@@ -624,9 +623,8 @@ list-style: none;
 
 .image_carousel_home_mini .title{
 	float:left;
-	width:218px;
+	width:100%;
 	text-align:center;
-	margin-left:7px;
 }
 
 .image_carousel_home a {

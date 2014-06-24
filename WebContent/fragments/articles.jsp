@@ -10,7 +10,7 @@
 					 	<img src="images/fotos/article.jpg" width="80" height="80" alt="">
 					 </c:when>
 					 <c:otherwise>
-					 	<img src="getThumb.action?id=<c:out value='${article.thumbId}'/>&dataType=1" width="80" height="60" alt="">
+					 	<img src="getThumb.action?id=<c:out value='${article.thumbId}'/>&dataType=2" width="80" height="80" alt="">
 					 </c:otherwise>
 					</c:choose>
 				</div>

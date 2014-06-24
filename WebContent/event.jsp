@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="/WEB-INF/lib/mentawai-all-2.5.3.jar" prefix="mtw" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<jsp:include page="fragments/head.jsp" />
@@ -8,17 +9,18 @@
 		<jsp:include page="fragments/path.jsp" />
 		<div id="pvn-article">
 			<div class="image">
-				<mtw:if test="event.file" value="null" negate="true">
-					<img src="ImageViewer.jr?id=<mtw:out value='event.file.id'/>&width=150&height=150&exactlySize=true" width="150" height="150" alt="">
-				</mtw:if>
-				<mtw:if test="event.file" value="null">
-					<img src="images/fotos/events.jpg" width="100" height="100" alt="">
-				</mtw:if>
+				<c:choose>
+				 <c:when test="${empty event.thbId}">
+				 	<img src="${pageContext.request.contextPath}/images/fotos/events.jpg" width="100" height="100" alt="" />
+				 </c:when>
+				 <c:otherwise>
+				 	<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${event.thbId}'/>&dataType=4" width="150" height="150" alt="" />
+				 </c:otherwise>
+				</c:choose>
 			</div>
-			<div class="titulo"><mtw:out value="event.what"/></div>
-			<div class="onde">Onde: <mtw:out value="event.location"/></div>
-			<div class="quando">Quando: <mtw:out value="startDate"/> às <mtw:out value="startHour" formatter="hourFormatter"/></div>
-			<div class="cont_artigo"><mtw:out value="event.description"/></div>
+			<div class="titulo"><c:out value="${event.title}"/></div>
+			<div class="onde">Onde: <c:out value="${event.loc}"/></div>
+			<div class="cont_artigo"><c:out value="${event.notes}"/></div>
 		</div>
 		<jsp:include page="fragments/footer.jsp" />
 	</body>

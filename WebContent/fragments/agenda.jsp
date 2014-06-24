@@ -10,7 +10,7 @@
 					<img src="images/fotos/events.jpg" width="100" height="100" alt="">
 				</c:when>
 				<c:otherwise>
-					<img src="ImageViewer.jr?id=<c:out value='${event.id}'/>&width=100&height=100&exactlySize=true&dataType=2" width="100" height="100" alt="">
+					<img src="getThumb.action?id=<c:out value='${event.thumbId}'/>&dataType=3" width="100" height="100" alt="">
 				</c:otherwise>
 			</c:choose>	    		
 		</a></div>
@@ -20,7 +20,11 @@
 				<fmt:formatDate dateStyle="MEDIUM" value="${event.start}"/>
 			</div>
 			<div class="agenda-title"><c:out value="${event.title}"/></div>
-			<div class="agenda-more"><a href="Evento.jr?id=<c:out value="${event.id}"/>">LEIA MAIS</a></div>
+			<div class="agenda-more">
+				<a href="evento/<c:out value="${event.eid}"/>/<c:out value="${event.start}"/>/<c:out value="${event.end}"/>">
+				LEIA MAIS
+				</a>
+			</div>
 		</div>
 	</div>
 </c:forEach> 

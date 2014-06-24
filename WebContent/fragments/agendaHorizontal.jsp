@@ -1,4 +1,4 @@
-<%@ taglib uri="/WEB-INF/lib/mentawai-all-2.5.3.jar" prefix="mtw" %>
+
 <mtw:list value="events">
    <mtw:isEmpty>
       

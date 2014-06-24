@@ -12,7 +12,7 @@
 			 <c:when test="${empty article.thumbId}">
 			 </c:when>
 			 <c:otherwise>
-			 	<div class="image"><img src="getThumb.action?id=<c:out value="${article.thumbId}"/>&width=150&height=150&exactlySize=true&dataType=3" width="150" height="150" alt=""></div>
+			 	<div class="image"><img src="getThumb.action?id=<c:out value="${article.thumbId}"/>&dataType=4" width="150" height="150" alt=""></div>
 			 </c:otherwise>
 			</c:choose>
 			<div class="titulo"><c:out value="${article.title}"/></div>

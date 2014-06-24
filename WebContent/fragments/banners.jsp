@@ -6,7 +6,7 @@
 			<c:forEach var="banner" items="${banners}">
 				<a href="<c:out value="${banner.link}"/>">
 					<img
-					src="getThumb.action?id=<c:out value="${banner.thumbId}"/>&width=951&height=370&fd=1"
+					src="getThumb.action?id=<c:out value="${banner.thumbId}"/>&dataType=10&fd=1"
 					width="950" height="370">
 				</a>
 			</c:forEach>

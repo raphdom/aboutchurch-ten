@@ -19,7 +19,7 @@
 		<jsp:include page="fragments/path.jsp" />
 		<div id="pvn-article">
 			<c:if test="${not empty category.thumbId}">
-				<div class="image"><img src="getThumb.action?id=<c:out value='${category.thumbId}'/>&width=250&height=250&exactlySize=false&dataType=3"  alt=""></div>
+				<div class="image"><img src="getThumb.action?id=<c:out value='${category.thumbId}'/>&dataType=5"  alt=""></div>
 			</c:if>
 			<div class="titulo"><c:out value="${category.text}"/></div>
 			<div class="cont_artigo"><c:out value="${category.description}"/></div>

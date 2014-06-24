@@ -2,11 +2,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>::Projeto Vida Nova Europa::</title>
 
-	<link rel="stylesheet" href="css/pvn.css">
-	<link rel="stylesheet" href="css/superfish.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pvn.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
 
-	<script src="js/jquery-1.8.1.min.js"></script>
-	<script src="js/jquery.easing.min.js"></script>
-	<script type="text/javascript" src="js/superfish.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-1.8.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/superfish.js"></script>
 	
 </head>   
