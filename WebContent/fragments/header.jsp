@@ -34,8 +34,8 @@
 		</li>
 		<li><a href="home.action"><span></span>multimédia</a>
 		  <ul>
-		     <li><a href="Galeria.jr">albuns</a></li>
-		     <li><a href="Galeria.jr?tipo=videos">videos</a></li>
+		     <li><a href="galeria/albuns">albuns</a></li>
+		     <li><a href="galeria/videos">videos</a></li>
 		  </ul>
 		</li>
 		<li><a href="home.action"><span></span>colunas</a>
