@@ -21,7 +21,7 @@
 			</div>
 			<div class="agenda-title"><c:out value="${event.title}"/></div>
 			<div class="agenda-more">
-				<a href="evento/<c:out value="${event.eid}"/>/<c:out value="${event.start}"/>/<c:out value="${event.end}"/>">
+				<a href="evento/<c:out value="${event.id}"/>">
 				LEIA MAIS
 				</a>
 			</div>
