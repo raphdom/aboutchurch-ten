@@ -92,7 +92,9 @@ public class GalleryController {
 		
 		ModelAndView modelAndView = new ModelAndView("/album");
 		
+		ResultObject resultObject = albumService.get(id);
 		
+		modelAndView.addObject("album", resultObject.getData().get(0));
 		
 		return modelAndView;
 		

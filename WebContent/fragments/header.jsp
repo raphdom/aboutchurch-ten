@@ -8,11 +8,11 @@
 </script>
 
 <div id="pvn-header">
-	<a href="home.action"><div id="pvn-logo"></div></a>
+	<a href="${pageContext.request.contextPath}"><div id="pvn-logo"></div></a>
 </div>
 <div id="pvn-main-menu">
 	<ul class="sf-menu">
-		<li class="current first"><a href="home.action"><span></span>sobre nós</a>
+		<li class="current first"><a href="${pageContext.request.contextPath}"><span></span>sobre nós</a>
 		  <ul>
 		     <li><a href="Artigo.jr?id=27">nossa historia</a></li>
 		     <li><a href="Artigo.jr?id=17">perfil doutrinário</a></li>
