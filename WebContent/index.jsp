@@ -1,69 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<jsp:include page="fragments/head.jsp" />
-	<link rel="stylesheet" href="css/slides.css">
-	<script type="text/javascript" src="js/slides.min.jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.carouFredSel-5.6.4-packed.js"></script>
-	<script> 
- 
-	    $(document).ready(function() { 
+	<head>
+	  	<meta charset="UTF-8">
+	  	<title>::Ministério Tenda Goiania::</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script> 
 		
-			$('#slides').slides({
-				preload: true,
-				preloadImage: 'images/loading.gif',
-				play:5000,
-				pause: 4500,
-				hoverPause: true,
-				generatePagination:false,
-				effect: 'fade'
-			});
-
-
-			$("#foo2").carouFredSel({
-				items : 1
-			});
-
-		});
-	</script>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jssor.js"></script>
+        <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+        <link rel="stylesheet" href="css/jssor.css">
+        <script type="text/javascript" src="js/tenda.js"></script>
+	</head>
 	<body>
-		<jsp:include page="fragments/header.jsp" />
+		<div class="container clearfix">
 		
-		<jsp:include page="fragments/banners.jsp" />
-		
-		
-		<div id="pvn-content-banner">
-			<div class = "pvn-inner-content-banner">
-				<div class="pvn-inner-title-banner"><span>Testemunhos</span></div>
-				<div class="pvn-inner-image-banner"><img src="images/fotos/testemunho.jpg" width="230" height="150" alt="Testemunhos"></div>
-				<div class="pvn-inner-text-banner">Os médicos disseram "não tem jeito" mas a Mão de Deus curou o bébé que ainda estava no meu ventre. O Senhor seja louvado.</div>
-				<a href="Categoria.jr?id=23"><div class="pvn-button">Mais informacões</div></a>
-			</div>
-			<div class = "pvn-inner-content-banner">
-				<div class="pvn-inner-title-banner"><span>PCAAC- Projeto Social</span></div>
-				<div class="pvn-inner-image-banner"><img src="images/fotos/pcaac.jpg" width="230" height="150" alt="PCAAC - Projeto Social"></div>
-				<div class="pvn-inner-text-banner">Em parceria com outras instituições sociais apoiamos várias  famílias sendo mediadores na entrega de alimentos.</div>
-				<a href="Categoria.jr?id=24"><div class="pvn-button">Mais informacões</div></a>
-			</div>
-			<div class = "pvn-inner-content-banner">
-				<div class="pvn-inner-title-banner"><span>Semear</span></div>
-				<div class="pvn-inner-image-banner"><img src="images/fotos/semear.jpg" width="230" height="150" alt="Image 1"></div>
-				<div class="pvn-inner-text-banner"><i>"Jesus disse: Escutem! Certo homem saiu para semear"</i>  Mc. 4:3 - Seja você também um semeador em terra fértil</div>
-				<a href="Artigo.jr?id=44"><div class="pvn-button">Mais informacões</div></a>
-			</div>
-		</div>
-		<div id="pvn-main-content">
-			<div id="pvn-main-content-left">
-				<jsp:include page="fragments/albunsHome.jsp" />
-				<div id="pvn-main-content-agenda">
+			<jsp:include page="fragments/header.jsp" />
+			
+			<jsp:include page="fragments/banners.jsp" />
+			
+        	<section class="mainInnerArticles">
+			      <jsp:include page="fragments/articles.jsp" />
+			</section>
+			
+			<div class="redBorder">
+				<section class="mainInnerEvents">
+					<div class = "h1Image">
+						<img src="img/iconAgenda.png">
+						<h1>Agenda:</h1>
+					</div>
 					<jsp:include page="fragments/agenda.jsp" />
-				</div>
+				</section>
+				<section class="mainInnerVideos">
+					<div class = "h1Image h1ImageVideos">
+						<img src="img/iconVideos.png">
+						<h1>Vídeos:</h1>
+					</div>
+					<div class="colunaVideo">
+				        	<figure class="foto"><img src="img/foto-01.jpg"></figure>
+				        	<h2>Título vídeo</h2>
+				        </div>
+				        <div class="colunaVideo">
+				        	<figure class="foto"><img src="img/foto-02.jpg"></figure>
+				        	<h2>Título vídeo</h2>
+				        </div>
+				</section>
 			</div>
-			<div id="pvn-main-content-articles">
-				<jsp:include page="fragments/articles.jsp" />
-			</div>
+			<section class="mainInnerAlbuns">
+			      <h1>Aconteceu:</h1>
+			      <jsp:include page="fragments/albuns.jsp" />
+			</section>
 		</div>
-
-		<jsp:include page="fragments/footer.jsp" />
 	</body>
 </html>

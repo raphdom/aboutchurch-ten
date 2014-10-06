@@ -1,11 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="image_carousel">
-	<div class="pvn-albuns-title">Álbuns relacionados:</div>
-	<div id="foo2">    
-  		<c:forEach var="album" items="${albuns}">
-			<a href="Album.jr?id=<c:out value='${album.id}'/>"><img src="getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=3&width=140&height=140&exactlySize=true"  width="140" height="140" /></a>
-		</c:forEach>
-		<div class="clearfix"></div>
+<c:forEach var="album" items="${albuns}">
+	<div class="colunaAlbum">
+		<a href="Album.jr?id=<c:out value='${album.id}'/>">
+		<figure class="foto">
+			<img src="getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=5" />
+		</figure>
+	 		<h3><c:out value='${album.title}'/></h3>
+	 		</a>
 	</div>
-</div>
+</c:forEach>
