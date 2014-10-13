@@ -8,20 +8,16 @@
 		<div class="container clearfix">
 			<jsp:include page="fragments/header.jsp" />
 			<div class="article">
-				<h1><c:out value="${article.title}"/></h1>
+				<h1><c:out value="${category.text}"/></h1>
 				<c:choose>
-				 <c:when test="${empty article.thumbId}">
+				 <c:when test="${empty category.thumbId}">
 				 </c:when>
 				 <c:otherwise>
-				 	<figure><img src="getThumb.action?id=<c:out value="${article.thumbId}"/>&dataType=4" width="150" height="150" alt=""></figure>
+				 	<figure><img src="getThumb.action?id=<c:out value="${category.thumbId}"/>&dataType=5" alt=""></figure>
 				 </c:otherwise>
 				</c:choose>
 				
-				<p><c:out value="${article.article}" escapeXml="false"/></p>
-				<div class="info">
-					<div class="label">Publicado em:</div><div class="published-date"><c:out value="${article.publishUp}"/></div>
-					<div class="label">Escrito por:</div><div class="writer"><c:out value="${article.author}"/></div>
-				</div>
+				<p><c:out value="${category.description}" escapeXml="false"/></p>
 			</div>
 			<jsp:include page="fragments/footer.jsp" />
 		</div>

@@ -2,7 +2,7 @@
 
 <c:forEach var="album" items="${albuns}">
 	<div class="colunaAlbum">
-		<a href="Album.jr?id=<c:out value='${album.id}'/>">
+		<a href="galeria/album/<c:out value='${album.id}'/>">
 		<figure class="foto">
 			<img src="getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=5" />
 		</figure>

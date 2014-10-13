@@ -1,7 +1,7 @@
 <footer>
 	<div class="logos">
-		<figure class="foto"><img src="img/logoFooter.png"></figure>
-		<figure class="foto"><img src="img/logoAboutChurch.png"></figure>
+		<figure class="foto"><img src="${pageContext.request.contextPath}/img/logoFooter.png"></figure>
+		<figure class="foto"><img src="${pageContext.request.contextPath}/img/logoAboutChurch.png"></figure>
 	</div>
 	<nav class="footerMenu">
 		<ul>
