@@ -11,6 +11,7 @@ import com.jrdevel.aboutus.core.common.to.ResultObject;
 import com.jrdevel.aboutus.core.site.album.AlbumService;
 import com.jrdevel.aboutus.core.site.article.ArticleService;
 import com.jrdevel.aboutus.core.site.banner.BannerService;
+import com.jrdevel.aboutus.core.site.video.VideoService;
 
 /**
  * @author Raphael Domingues
@@ -32,6 +33,9 @@ public class RootController {
 	@Autowired
 	private EventService eventService;
 	
+	@Autowired
+	private VideoService videoService;
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView index(){
 		
@@ -52,6 +56,9 @@ public class RootController {
 		//Events
 		ResultObject resultEvents = eventService.listHomePage();
 		model.addObject("events", resultEvents.getData());
+		
+		ResultObject resultVideos = videoService.listHomePage();
+		model.addObject("videos", resultVideos.getData());
 		
 		return model;
 		

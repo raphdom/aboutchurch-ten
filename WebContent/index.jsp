@@ -26,14 +26,7 @@
 						<img src="img/iconVideos.png">
 						<h1>Vídeos:</h1>
 					</div>
-					<div class="colunaVideo">
-				        	<figure class="foto"><img src="img/foto-01.jpg"></figure>
-				        	<h2>Título vídeo</h2>
-				        </div>
-				        <div class="colunaVideo">
-				        	<figure class="foto"><img src="img/foto-02.jpg"></figure>
-				        	<h2>Título vídeo</h2>
-				        </div>
+					<jsp:include page="fragments/videos.jsp" />
 				</section>
 			</div>
 			<section class="mainInnerAlbuns">

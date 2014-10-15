@@ -4,6 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<jsp:include page="fragments/head.jsp" />
+	<c:set var="req" value="${pageContext.request}" />
+    <c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}" />
 	<body>
 		<div class="container clearfix">
 			<jsp:include page="fragments/header.jsp" />

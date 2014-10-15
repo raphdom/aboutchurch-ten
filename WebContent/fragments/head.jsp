@@ -14,5 +14,8 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jssor.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jssor.slider.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jssor.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/spinners.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/lightview.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/lightview.css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/tenda.js"></script>
 </head>
