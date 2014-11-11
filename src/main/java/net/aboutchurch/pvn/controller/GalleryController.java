@@ -81,6 +81,10 @@ public class GalleryController {
 		ModelAndView modelAndView = new ModelAndView("/gallery");
 		
 		modelAndView.addObject("categories", getCategoriesByParent(id,"videos"));
+		
+		ResultObject resultObject = videoService.listByCategory(id);
+		modelAndView.addObject("videos", resultObject.getData());
+		
 		modelAndView.addObject("type", "videos");
 		
 		return modelAndView;

@@ -9,25 +9,25 @@
 		<div class="container clearfix">
 			<jsp:include page="fragments/header.jsp" />
 			<div class="article">
-				<div class="image">
-					<c:choose>
-					 <c:when test="${empty event.thbId}">
-					 	<img src="${pageContext.request.contextPath}/img/events.jpg" width="100" height="100" alt="" />
-					 </c:when>
-					 <c:otherwise>
-					 	<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${event.thbId}'/>&dataType=4" width="150" height="150" alt="" />
-					 </c:otherwise>
-					</c:choose>
-				</div>
-				<div class="titulo"><c:out value="${event.title}"/></div>
-				<div class="when">
-					<fmt:formatDate pattern="E" value="${eventRecurrence.start}"/>
+				<h1><c:out value="${event.title}"/></h1>
+				<c:choose>
+				 <c:when test="${empty event.thbId}">
+				 	<figure><img src="${pageContext.request.contextPath}/img/events.jpg" width="100" height="100" alt="" /></figure>
+				 </c:when>
+				 <c:otherwise>
+				 	<figure><img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value="${event.thbId}"/>&dataType=4" width="150" height="150" alt=""></figure>
+				 </c:otherwise>
+				</c:choose>
+				<p>
+					<fmt:formatDate pattern="EEEE" value="${eventRecurrence.start}"/>
 					<fmt:formatDate dateStyle="long" value="${eventRecurrence.start}"/> das
 					<fmt:formatDate type="time" timeStyle="short" value="${eventRecurrence.start}"/> às
 					<fmt:formatDate type="time" timeStyle="short" value="${eventRecurrence.end}"/>
-				</div>
-				<div class="onde">Onde: <c:out value="${event.loc}"/></div>
-				<div class="cont_artigo"><c:out value="${event.notes}"/></div>
+					<br/>
+					Onde: <c:out value="${event.loc}"/>
+					<br/>
+					<c:out value="${event.notes}" escapeXml="false"/>
+				</p>
 			</div>
 			<jsp:include page="fragments/footer.jsp" />
 		</div>

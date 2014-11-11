@@ -46,18 +46,18 @@ public class RootController {
 		model.addObject("banners", resultBanners.getData());
 		
 		//Articles
-		ResultObject resultArticles = articleService.listSite();
+		ResultObject resultArticles = articleService.listSite(4);
 		model.addObject("articles", resultArticles.getData());
 		
 		//Albuns
-		ResultObject resultAlbuns = albumService.listHomePage();
+		ResultObject resultAlbuns = albumService.listHomePage(5);
 		model.addObject("albuns", resultAlbuns.getData());
 		
 		//Events
 		ResultObject resultEvents = eventService.listHomePage();
 		model.addObject("events", resultEvents.getData());
 		
-		ResultObject resultVideos = videoService.listHomePage();
+		ResultObject resultVideos = videoService.listHomePage(2);
 		model.addObject("videos", resultVideos.getData());
 		
 		return model;

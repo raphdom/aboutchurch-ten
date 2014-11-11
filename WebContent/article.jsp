@@ -11,6 +11,7 @@
 				<h1><c:out value="${article.title}"/></h1>
 				<c:choose>
 				 <c:when test="${empty article.thumbId}">
+				 	<figure><img src="img/articleNoImage.jpeg" width="150" height="150" alt=""></figure>
 				 </c:when>
 				 <c:otherwise>
 				 	<figure><img src="getThumb.action?id=<c:out value="${article.thumbId}"/>&dataType=4" width="150" height="150" alt=""></figure>

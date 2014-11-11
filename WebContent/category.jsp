@@ -19,6 +19,32 @@
 				
 				<p><c:out value="${category.description}" escapeXml="false"/></p>
 			</div>
+			
+			<c:choose>
+			 <c:when test="${empty articles}">
+			 </c:when>
+			 <c:otherwise>
+			 	<div class="redBorder category">
+					<div class = "h1Image">
+						<img src="img/iconAgenda.png">
+						<h1>Artigos:</h1>
+					</div>
+					<jsp:include page="fragments/articles.jsp" />
+				</div>
+			 </c:otherwise>
+			</c:choose>
+			
+			<c:choose>
+			 <c:when test="${empty albuns}">
+			 </c:when>
+			 <c:otherwise>
+			 	<section class="mainInnerAlbuns">
+			      <h1>Albuns:</h1>
+			      <jsp:include page="fragments/albuns.jsp" />
+				</section>
+			 </c:otherwise>
+			</c:choose>
+			
 			<jsp:include page="fragments/footer.jsp" />
 		</div>
 	</body>

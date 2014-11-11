@@ -3,9 +3,18 @@
 
 <c:forEach var="video" items="${videos}">
 	<div class="colunaVideo">
-		<a href="www.youtube.com">
-    		<figure class="foto"><img src="http://img.youtube.com/vi/AHkb5kdmuwE/0.jpg"></figure>
+		 	<a href='http://www.youtube.com/embed/<c:out value="${video.youtubeId}"/>?autoplay=1&autohide=1&border=0&egm=0&showinfo=0&showsearch=0' 
+		   class="lightview" 
+		   data-lightview-type="iframe"  
+		   data-lightview-options="
+		     width: 638,
+		     height: 360,
+		     viewport: 'scale'
+		   ">
+    		<figure class="foto"><img src="http://img.youtube.com/vi/<c:out value="${video.youtubeId}"/>/0.jpg"></figure>
     		<h2><c:out value="${video.title}"/></h2>
     	</a>
+    	
+   
     </div>
 </c:forEach> 

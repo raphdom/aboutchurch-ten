@@ -16,8 +16,16 @@
 				    <c:forEach var="category" items="${categories}">
 				    	<div class="item">
 							<a href="${pageContext.request.contextPath}/galeria/${type}/categoria/<c:out value='${category.id}'/>">
+								
 								<figure>
-									<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${category.thumbId}'/>&dataType=5">
+									<c:choose>
+									 <c:when test="${empty category.thumbId}">
+									 	<img src="${pageContext.request.contextPath}/img/defaultNoImage.png">
+									 </c:when>
+									 <c:otherwise>
+									 	<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${category.thumbId}'/>&dataType=5" alt="">
+									 </c:otherwise>
+									</c:choose>
 								</figure>
 								<h2><c:out value='${category.text}'/></h2>
 							</a>
@@ -29,9 +37,35 @@
 				    	<div class="item">
 							<a href="${pageContext.request.contextPath}/galeria/album/<c:out value='${album.id}'/>">
 								<figure>
-									<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=5">
+									<c:choose>
+									 <c:when test="${empty album.thumbId}">
+									 	<img src="${pageContext.request.contextPath}/img/defaultNoImage.png">
+									 </c:when>
+									 <c:otherwise>
+									 	<img src="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=5" alt="">
+									 </c:otherwise>
+									</c:choose>
 								</figure>
 								<h2><c:out value='${album.title}'/></h2>
+							</a>
+						</div>
+				    </c:forEach>
+			    </c:if>
+			    <c:if test="${not empty videos}">
+				    <c:forEach var="video" items="${videos}">
+				    	<div class="item">
+							<a href='http://www.youtube.com/embed/<c:out value="${video.youtubeId}"/>?autoplay=1&autohide=1&border=0&egm=0&showinfo=0&showsearch=0' 
+							   class="lightview" 
+							   data-lightview-type="iframe"  
+							   data-lightview-options="
+							     width: 638,
+							     height: 360,
+							     viewport: 'scale'
+							   ">
+								<figure>
+									<img src="http://img.youtube.com/vi/<c:out value="${video.youtubeId}"/>/0.jpg">
+								</figure>
+								<h2><c:out value='${video.title}'/></h2>
 							</a>
 						</div>
 				    </c:forEach>
